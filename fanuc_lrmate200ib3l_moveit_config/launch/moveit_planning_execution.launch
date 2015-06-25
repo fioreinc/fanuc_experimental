@@ -7,7 +7,7 @@
            controller_joint_names: [joint_1, joint_2, ... joint_N] 
        - Update with joint names for your robot (in order expected by rbt controller)
        - and uncomment the following line: -->
-  <!-- <rosparam command="load" file="$(find fanuc_lrmate200ib3l_support)/config/joint_names.yaml"/> -->
+  <!-- <rosparam command="load" file="$(find fanuc_lrmate200ib_support)/config/joint_names.yaml"/> -->
  
   <!-- the "sim" argument controls whether we connect to a Simulated or Real robot -->
   <!--  - if sim=false, a robot_ip argument is required -->
@@ -28,7 +28,7 @@
   <!--   - this typically includes: robot_state, motion_interface, and joint_trajectory_action nodes -->
   <!--   - replace these calls with appropriate robot-specific calls or launch files -->
   <group unless="$(arg sim)">
-    <include file="$(find fanuc_lrmate200ib3l_support)/launch/robot_interface.launch" >
+    <include file="$(find fanuc_lrmate200ib_support)/launch/robot_interface_streaming_lrmate200ib3l.launch" >
       <arg name="robot_ip" value="$(arg robot_ip)"/>
     </include>
   </group>
